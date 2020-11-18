@@ -18,7 +18,7 @@ $(document).ready(function () {
                     <td>${$data.body}</td>
                     <td>
                     <button type="button" class="btn btn-danger" id='remove'>Supprimer</button>
-                    <button type="button" onclick=`getDetailData(${$data.id})` class="btn btn-secondary" data-toggle="modal" data-target="#modalShow" id="show">Afficher</button>
+                    <button type="button" onclick="`getDetailData($data.id)``" class="btn btn-secondary" data-toggle="modal" data-target="#modalShow" id="show">Afficher</button>
                     <td>
                 <tr>
                 `);
