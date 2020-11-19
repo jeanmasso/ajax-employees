@@ -13,8 +13,10 @@
 <body>
     <div class="container">
 
-        <button id='add' class="btn btn-secondary" data-toggle="modal" data-target="#modalAdd">Ajouter un article</button>
+        <!-- Bouton permettant d'afficher la modal d'ajout d'article -->
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">Ajouter un article</button>
 
+        <!-- Table d'affichage de la liste des articles stockés dans l'API -->
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -26,61 +28,66 @@
                 </tr>
             </thead>
             <tbody id="tbody">
+                <!-- Insertion des lignes de chaque donées içi -->
             </tbody>
         </table>
 
-        <!-- Modal Add-->
+        <!-- Modal d'ajout d'un article -->
         <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="modalAddLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Détails</h5>
+                        <h5 class="modal-title">Ajout d'article</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>
-                            <b>User Id :</b> 1</br>
-                            <b>Id :</b> 1</br>
-                            <b>Title :</b> sunt aut facere repellat provident occaecati excepturi optio
-                            reprehenderit</br>
-                            <b>Body :</b> quia et suscipit suscipit recusandae consequuntur expedita et cum
-                            reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet
-                            architecto</br>
-                        </p>
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-4">
+                                    <label for="userId">User Id :</label>
+                                    <input type="text" class="form-control" id="userId" placeholder="User_Id...">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="title">Title :</label>
+                                    <input type="text" class="form-control" id="title" placeholder="Title...">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="body">Body :</label>
+                                    <input type="text" class="form-control" id="body" placeholder="Body...">
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" onclick="postNewData()" class="btn btn-primary" id="register">Ajouter</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Modal Show-->
+        <!-- Modal d'affichage des détails d'un article -->
         <div class="modal fade" id="modalShow" tabindex="-1" role="dialog" aria-labelledby="modalShowLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Détails</h5>
+                        <h5 class="modal-title">Détails</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body" id="modalBody">
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
                 </div>
             </div>
         </div>
-
-        
 
     </div>
 
