@@ -1,0 +1,20 @@
+.body {
+    box-sizing: border-box;
+}
+
+.btn-add{
+    margin: 10px 0;
+}
+
+.table td{
+    border: 1px solid #dee2e6;
+    vertical-align: initial;
+}
+
+.thead tr th:first-child{
+    width: 110px;
+}
+
+.tbody tr td:last-child .btn{
+    margin: 5px;
+}

@@ -2,34 +2,39 @@
 <html lang="en">
 
 <head>
-    <title>Ajax Employees</title>
+    <title>Exo Requêtes Ajax</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/fontawesome/css/all.css">
     <link rel="stylesheet" href="public/style/style.css">
 </head>
 
-<body>
+<body class="body">
     <div class="container">
 
+        <h1 class="text-center">Requêtes Ajax</h1>
+        <h2 class="text-center">$.ajax() / $.get() / $.post</h2>
+
         <!-- Bouton permettant d'afficher la modal d'ajout d'article -->
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">Ajouter un article</button>
+        <button class="btn btn-primary btn-add float-right" data-toggle="modal" data-target="#modalAdd"><i class="fas fa-plus"></i> Ajouter un article</button>
 
         <!-- Table d'affichage de la liste des articles stockés dans l'API -->
         <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">User ID</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Body</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody id="tbody">
-                <!-- Insertion des lignes de chaque donées içi -->
-            </tbody>
+
+                <thead class="thead-dark thead text-center">
+                    <tr>
+                        <th scope="col">User ID</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Body</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody" class="tbody">
+                    <!-- Insertion des lignes de chaque donées içi -->
+                </tbody>
         </table>
 
         <!-- Modal d'ajout d'un article -->
@@ -44,11 +49,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form id="myForm">
                             <div class="form-row">
                                 <div class="form-group col-4">
                                     <label for="userId">User Id :</label>
-                                    <input type="text" class="form-control" id="userId" placeholder="User_Id...">
+                                    <input type="text" class="form-control" id="userId" placeholder="User_Id..." autofocus>
                                 </div>
                             </div>
                             <div class="form-row">

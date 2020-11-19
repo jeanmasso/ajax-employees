@@ -20,22 +20,21 @@ function getData() {
                 $('tbody').append(`
                 <!-- Ajout d'un id="row" permettant d'identifier la ligne à supprimer -->
                 <tr id="row${$data.id}">
-                    <td>${$data.userId}</td>
-                    <td>${$data.id}</td>
+                    <td class="text-center">${$data.userId}</td>
+                    <td class="text-center">${$data.id}</td>
                     <td>${$data.title}</td>
                     <td>${$data.body}</td>
                     <td>
                         <!-- Bouton de suppression de la ligne -->
-                        <button type="button" class="btn btn-danger" onclick="removeData($('#row${$data.id}'))">Supprimer</button>
+                        <button type="button" class="btn btn-danger" onclick="removeData($('#row${$data.id}'))"><i class="fas fa-trash-alt"></i></button>
                         <!-- Bouton d'affichage de la modal permettant d'afficher les détails de l'article -->
-                        <button type="button" onclick="getDetailData(${$data.id})" class="btn btn-secondary" data-toggle="modal" data-target="#modalShow">Afficher</button>
-                    <td>
+                        <button type="button" onclick="getDetailData(${$data.id})" class="btn btn-secondary" data-toggle="modal" data-target="#modalShow"><i class="fas fa-search"></i></button>
+                    </td>
                 <tr>
                 `);
             };
         }
     });
-
 
 }
 
@@ -63,9 +62,7 @@ function postNewData() {
 
     // $userId contient la valeur de l'input ayant id="userId"
     $userId = $('#userId').val();
-    // $title contient la valeur de l'input ayant id="title"
     $title = $('#title').val();
-    // $body contient la valeur de l'input ayant id="body"
     $body = $('#body').val();
 
     // Requête AJAX $.post() permettant d'ajouter un article à l'API
@@ -78,18 +75,21 @@ function postNewData() {
             $('tbody').append(`
                 <!-- Ajout d'un id="row" permettant d'identifier la ligne à supprimer -->
                 <tr id="row${data.id}">
-                    <td>${data.userId}</td>
-                    <td>${data.id}</td>
+                    <td class="text-center">${data.userId}</td>
+                    <td class="text-center">${data.id}</td>
                     <td>${data.title}</td>
                     <td>${data.body}</td>
                     <td>
-                      <button type="button" onclick="removeData($('#row${data.id}'))" class="btn btn-danger" id="remove">Supprimer</button>     
-                      <button type="button" onclick="getDetailData(${data.id})" class="btn btn-secondary" data-toggle="modal" data-target="#modalShow" id="show">Afficher</button>
-                    <td>
+                      <button type="button" onclick="removeData($('#row${data.id}'))" class="btn btn-danger" id="remove"><i class="fas fa-trash-alt"></i></button>     
+                      <button type="button" onclick="getDetailData(${data.id})" class="btn btn-secondary" data-toggle="modal" data-target="#modalShow" id="show"><i class="fas fa-search"></i></button>
+                    </td>
                 <tr>
             `);
         },
     'json');
+
+    // On vide le formulaire afin qu'il soit prêt à être remplit un nouvelle fois
+    $('#myForm')[0].reset();
 
 }
 
